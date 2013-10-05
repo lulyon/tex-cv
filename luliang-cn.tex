@@ -1,0 +1,111 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[blue]{classic}                % idem
+\usepackage{xunicode, xltxtra}
+\XeTeXlinebreaklocale "zh"
+\widowpenalty=10000
+
+%\setmainfont[Mapping=tex-text]{文泉驿正黑}
+
+% character encoding
+%\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+\usepackage{CJKutf8}
+  
+% adjust the page margins
+\usepackage[scale=0.90]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+% \setmainfont[Mapping=tex-text]{STXihei}
+% \setsansfont[Mapping=tex-text]{STXihei}
+% \setmainfont[Mapping=tex-text]{KaiTi}
+% \setsansfont[Mapping=tex-text]{KaiTi}
+
+% liuan
+%\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
+\usepackage{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
+% \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+\setCJKmainfont[BoldFont={KaiTi},ItalicFont={KaiTi}]{KaiTi}
+\setCJKsansfont{KaiTi}
+% \setCJKmonofont{SimSun}
+\setCJKmonofont{KaiTi}
+
+\setCJKfamilyfont{yao}{FZYaoTi}
+\newcommand\yao{\CJKfamily{yao}}
+
+\CJKtilde
+
+% personal data
+\firstname{卢}
+\familyname{亮}
+\title{}               % optional, remove the line if not wanted
+
+\mobile{电话: 188~0102~7378}                    % optional, remove the line if not wanted
+\email{邮箱: lulyon@126.com}                      % optional, remove the line if not wanted
+%% \quote{\small{``Do what you fear, and the death of fear is certain.''\\-- Anthony Robbins}}
+
+\nopagenumbers{}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand*{\cventry}[6]{%
+  \cvline{#1}{%
+    {\bfseries#2}%
+    \ifx#3\else{  {\itshape#3}}\fi%
+    \ifx#4\else{  #4}\fi%
+    \ifx#5\else{  #5}\fi%
+    .%
+    \ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}\small#6\end{minipage}}\fi
+    }}%
+
+\section{教育背景}
+\cventry{2011至今}{硕士}{~~~~~~中国科学院计算技术研究所}{~~~~~~计算机技术}{}{}
+\cventry{2006--2011}{本科}{~~~~~~武汉大学~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}{~~~~~~地理信息系统}{}{}
+
+\section{项目经历}
+\renewcommand{\baselinestretch}{1.2}
+%\renewcommand{\baselinestretch}{0.1}
+\cvcomputer{2012至今}{面向新型架构的复杂空间计算平台}{Linux, C++}{国家863项目}{}{}
+\cventry{项目描述}{}{该项目旨在研发一个高性能的空间数据分析平台. 主要组成部分为: 空间数据分析算法, 基于MPI的并行计算框架, 基于内存的数据访问层以及算法评估模型与测评工具}{}{}{}
+\cventry{个人职责}{}{1) 开发一个基于内存数据库Redis的空间数据访问层.}{其功能包括空间数据类型的扩展, 数据缓存与序列化及数据压缩, 数据的加载和持久化.}{简化了空间数据访问, 降低了系统IO开销}{}
+\cventry{}{}{2) 开发基于MPI的集群环境下的并行空间数据处理框架.}{其功能包括数据划分, 任务分发, 负载均衡, 任务归并.}{简化了并行空间算法的实现, 提高了算法的并行效率}{}
+\cventry{}{}{3) 研究算法评估模型并开发算法测试与评估工具.}{基于开源性能分析库实现了代码插桩, 性能数据收集, 性能分析与展示以及算法多案例的自动测试, 评估模型计算与性能评价}{}{}
+
+%\vspace*{0.01\baselineskip}
+
+\cvcomputer{2010--2011}{基于先进架构的高性能空间分析中间件}{Windows, C++}{国家863项目}{}{}
+\cventry{项目描述}{}{}{该项目旨在研发一套并行的空间数据分析中间件。主要组成部分为：基于Qt的空间数据展示软件，插件式中间件集成框架，空间数据分析算法中间件等}{}{}
+\cventry{个人职责}{}{实现单线程、多线程(OpenMP)、多进程(MPI)版本的空间几何网络构建算法和数据插值算法}{}{}{}
+
+%\renewcommand{\baselinestretch}{1.0}
+
+
+\section{开源社区}
+\cventry{Blog}         {\url{wchar.org} }{技术博客,}{记录研究心得和编程经验,}{超过200篇}{}
+\cventry{StackOverflow}{\url{stackoverflow.com/users/1607051/lulyon} }{Q\&A > 150, Reputation > 2k, }{top 2\%}{}{}
+\cventry{OnlineJudge}  {\url{acm.whu.edu.cn/land/user/detail?user_id=2499} }{Rank: 17,}{top 0.2\%}{}{}
+\cventry{GitHub}       {\url{github.com/lulyon}}{个人开源项目和实验文档,}{编程语言：C/C++, Java, Bash, R}{}{}
+\cventry{1)}{}{R-snappy}{~C\&R,}{Google开源压缩库Snappy的R语言接口绑定}{}
+\cventry{2)}{}{VegaDB}{~C++,}{MySQL空间数据存储引擎,支持要素查询和表尾插入}{}
+\cventry{3)}{}{SpatialClient}{~C++,}{内存数据库Redis的空间数据访问客户端}{}
+\cventry{4)}{}{RealTimeIndexer}{~Java,}{基于Lucene的微博数据索引和搜索工具}{}
+
+\section{专业技能}
+\cventry{编程语言}{C/C++ > Java > Bash shell}{}{}{}{}
+\cventry{操作系统}{Linux, Windows}{~~~~熟悉Linux和Windows环境编程}{}{}{}
+\cventry{数据库}{MySQL, PostgreSQL, Redis}{~~~~熟悉MySQL, PostgreSQL, Redis}{}{}{}
+\cventry{并行计算}{MPI}{~~~~熟悉基于MPI的并行程序设计及调优}{}{}{}
+\cventry{外语水平}{}{CET-6: 510分;~~60-second science~的翻译者,}{~~翻译科技短文超过100篇}{}{}
+
+
+
+\section{活动与奖励}
+\cventry{社团活动}{}{武汉大学ACM集训队;~~微软技术俱乐部成员}{}{}{}
+\cventry{竞赛奖励}{}{陈永龄院士科技创新奖学金;~~武汉大学ACM暨华中北区程序设计大赛三等奖}{}{}{}
+\cventry{学习奖励}{}{新生乙等奖学金;~~国家励志奖学金;~~国家乙等奖学金}{}{}{}
+\cventry{荣誉称号}{}{优秀共青团员;~~院优秀毕业生}{}{}{}
+\closesection{}                   % needed to renewcommands
+
+\end{document}

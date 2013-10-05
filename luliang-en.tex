@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[blue]{classic}                % idem
+\usepackage{xunicode, xltxtra}
+%\XeTeXlinebreaklocale "zh"
+\widowpenalty=10000
+
+%\setmainfont[Mapping=tex-text]{文泉驿正黑}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+%\usepackage{CJKutf8}
+  
+% adjust the page margins
+\usepackage[scale=0.92]{geometry}
+\recomputelengths                             % required when changes are made to page layout lengths
+%\setmainfont[Mapping=tex-text]{STXihei}
+%\setsansfont[Mapping=tex-text]{STXihei}
+
+% liuan
+%\usepackage[slantfont,CJKnumber,CJKtextspaces]{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
+%\usepackage{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
+%\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+%\setCJKsansfont{KaiTi}
+%\setCJKmonofont{SimSun}
+
+%\setCJKfamilyfont{yao}{FZYaoTi}
+%\newcommand\yao{\CJKfamily{yao}}
+
+%\CJKtilde
+
+% personal data
+\firstname{Lu}
+\familyname{Liang}
+\title{}               % optional, remove the line if not wanted
+
+\mobile{Tel: 188~0102~7378}                    % optional, remove the line if not wanted
+\email{Email: lulyon@126.com}                      % optional, remove the line if not wanted
+%% \quote{\small{``Do what you fear, and the death of fear is certain.''\\-- Anthony Robbins}}
+
+\nopagenumbers{}
+
+\begin{document}
+
+\maketitle
+
+\renewcommand*{\cventry}[6]{%
+  \cvline{#1}{%
+    {\bfseries#2}%
+    \ifx#3\else{  {\itshape#3}}\fi%
+    \ifx#4\else{  #4}\fi%
+    \ifx#5\else{,  #5}\fi%
+    .%
+    %\ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}\small#6\end{minipage}}\fi
+    \ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}#6\end{minipage}}\fi
+    }}%
+
+\section{Education}
+\cventry{2011-Present}{MS}{~~~~University of Chinese Academy of Sciences}{~~~~Computer Engineering}{}{}
+\cventry{2006--2010}{BA}{~~~~Wuhan University~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}{~~~~Geographic Information System}{}{}
+
+
+\section{Projects}
+\renewcommand{\baselinestretch}{1.2}
+%\renewcommand{\baselinestretch}{0.1}
+\cvcomputer{2012.11-Present}{Complex spatial computing platform}{Linux, C++}{National 863 project}{}{}
+\cventry{Introduction}{}{}{This project is meant to develop a high performance spatial data analysis platform. It is consist of: a set of spatial analysis algorithm, parallel computing framework based on MPI, in-memory spatial data access layer and algorithm evaluation model and tools}{}{}
+\cventry{My works}{}{1) develop a spatial data access layer based on in-memory database Redis.}{features includes spatial data type extension, data serialization and compression, data ETL and Persistence}{thus simplifies spatial data access and reduces IO overhead}{}
+\cventry{}{}{2) develop a parallel spatial data processing framework based on MPI.}{features includes data partition, task mapping, loading balancing and task reduction}{thus simplifies implementation of spatial analysis algorithm and boosts parallel proficiency}{}
+\cventry{}{}{3) study algorithm evaluation model and develop test and evaluation tools.}{features includes auto tests of multiple cases of algorithm along with evaluation model computing and visualization}{}{}
+
+%\vspace*{0.01\baselineskip}
+
+\cvcomputer{2010--2011}{High performance spatial middle-ware}{Windows, C++}{National 863 project}{}{}
+\cventry{Introduction}{}{}{This project is meant to develop a set of parallel spatial data analysis middle-ware.}{}{}
+\cventry{My works}{}{I've implemented a single-threaded, multi-threaded(OpenMP) and multi-process(MPI) version of parallel geometric mesh construction algorithm and interpolation algorithm.}{}{}{}
+
+%\renewcommand{\baselinestretch}{1.0}
+
+\section{Community}
+\cventry{Blog}         {\url{wchar.org} }{technology blog in Chinese,}{record programming experiences, up to 200 journals}{}{}
+\cventry{StackOverflow}{\url{stackoverflow.com/users/1607051/lulyon} }{Q\&A > 150, Reputation > 2k, }{top 2\%}{}{}
+\cventry{OnlineJudge}  {\url{acm.whu.edu.cn/land/user/detail?user_id=2499} }{Rank: 17,}{top 0.2\%}{}{}
+\cventry{GitHub}       {\url{github.com/lulyon}}{personal projects,}{Languages: C/C++, Java, Bash, R}{}{}
+\cventry{1)}{}{R-snappy}{~C\&R}{R language binding of Snappy, the compressor open sourced from Google}{}
+\cventry{2)}{}{VegaDB}{~C++}{spatial storage engine of MySQL, supports feature select and trailing insertion}{}
+\cventry{3)}{}{SpatialClient}{~C++}{spatial data client of in-memory database Redis}{}
+\cventry{4)}{}{RealTimeIndexer}{~Java}{index and search tool for data scratched from sina weibo based on Lucene}{}
+
+
+\section{Skills}
+\cventry{Languages}{C/C++ > Java > Shell}{}{}{}{}
+\cventry{OS}{Linux, Windows }{~familiar with Linux and Windows environment programming}{}{}{}
+\cventry{Database}{MySQL, PostgreSQL, Redis }{~familiar with MySQL, PostgreSQL, Redis}{}{}{}
+\cventry{Parallel}{MPI }{~familiar with parallel programming and tuning with MPI}{}{}{}
+\cventry{English}{CET-6: 510}{~60-second science~translator, }{translate up to 100 tech essays}{}{}
+
+\section{Activity \& Awards}
+\cventry{Activity}{}{ACM training team of Wuhan University; Microsoft technology club member}{}{}{}
+\cventry{Competition}{}{Academician Chen Yonglin Science and Technology Innovation Award; ACM programming contest of Wuhan University and central China region, Third Prize}{}{}{}
+\cventry{Scholarship}{}{Freshman Scholarship; National motivational scholarship}{}{}{}
+\cventry{Titles}{}{Outstanding youth league member; Outstanding graduate}{}{}{}
+
+
+\closesection{}                   % needed to renewcommands
+
+\end{document}
