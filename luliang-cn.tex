@@ -11,10 +11,10 @@
 
 % character encoding
 %\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
-\usepackage{CJKutf8}
+\usepackage{xeCJK}
   
 % adjust the page margins
-\usepackage[scale=0.90]{geometry}
+\usepackage[scale=0.92]{geometry}
 \recomputelengths                             % required when changes are made to page layout lengths
 % \setmainfont[Mapping=tex-text]{STXihei}
 % \setsansfont[Mapping=tex-text]{STXihei}
@@ -25,22 +25,22 @@
 %\usepackage[slantfont,boldfont,CJKnumber,CJKtextspaces]{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
 \usepackage{xeCJK} % 加载 xeCJK，允许斜体、粗体和 CJK 数字以及 CJK 对空格的设置
 % \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
-\setCJKmainfont[BoldFont={KaiTi},ItalicFont={KaiTi}]{KaiTi}
-\setCJKsansfont{KaiTi}
+\setCJKmainfont[BoldFont={SimSun},ItalicFont={SimSun}]{SimSun}
+\setCJKsansfont{SimSun}
 % \setCJKmonofont{SimSun}
-\setCJKmonofont{KaiTi}
+\setCJKmonofont{SimSun}
 
 \setCJKfamilyfont{yao}{FZYaoTi}
 \newcommand\yao{\CJKfamily{yao}}
 
-\CJKtilde
+% \CJKtilde
 
 % personal data
 \firstname{卢}
 \familyname{亮}
 \title{}               % optional, remove the line if not wanted
 
-\mobile{电话: 188~0102~7378}                    % optional, remove the line if not wanted
+\mobile{电话: 182~0125~3959}                    % optional, remove the line if not wanted
 \email{邮箱: lulyon@126.com}                      % optional, remove the line if not wanted
 %% \quote{\small{``Do what you fear, and the death of fear is certain.''\\-- Anthony Robbins}}
 
@@ -60,52 +60,48 @@
     \ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}\small#6\end{minipage}}\fi
     }}%
 
-\section{教育背景}
-\cventry{2011至今}{硕士}{~~~~~~中国科学院计算技术研究所}{~~~~~~计算机技术}{}{}
-\cventry{2006--2011}{本科}{~~~~~~武汉大学~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}{~~~~~~地理信息系统}{}{}
+
+\section{教育经历}
+\cventry{2011-2014}{中科院计算所}{硕士}{}{计算机技术}{主要从事并行计算/数据库/位置服务方面的学习和研究.}
+
+\section{工作经历}
+\cventry{2014-2016}{腾讯科技有限公司}{互动娱乐事业群}{}{后台开发工程师}{主要负责游戏平台和社区相关的后台服务器开发,以及管理端和Web开发的工作.}
 
 \section{项目经历}
 \renewcommand{\baselinestretch}{1.2}
 %\renewcommand{\baselinestretch}{0.1}
-\cvcomputer{2012至今}{面向新型架构的复杂空间计算平台}{Linux, C++}{国家863项目}{}{}
-\cventry{项目描述}{}{该项目旨在研发一个高性能的空间数据分析平台. 主要组成部分为: 空间数据分析算法, 基于MPI的并行计算框架, 基于内存的数据访问层以及算法评估模型与测评工具}{}{}{}
-\cventry{个人职责}{}{1) 开发一个基于内存数据库Redis的空间数据访问层.}{其功能包括空间数据类型的扩展, 数据缓存与序列化及数据压缩, 数据的加载和持久化.}{简化了空间数据访问, 降低了系统IO开销}{}
-\cventry{}{}{2) 开发基于MPI的集群环境下的并行空间数据处理框架.}{其功能包括数据划分, 任务分发, 负载均衡, 任务归并.}{简化了并行空间算法的实现, 提高了算法的并行效率}{}
-\cventry{}{}{3) 研究算法评估模型并开发算法测试与评估工具.}{基于开源性能分析库实现了代码插桩, 性能数据收集, 性能分析与展示以及算法多案例的自动测试, 评估模型计算与性能评价}{}{}
+\cvcomputer{2014.07-2015.11}{手机QQ游戏大厅(手游宝)}{}{}{}{}
+\cventry{游戏群组公会}{}{以游戏圈子为单位聚合游戏用户,提供会话聊天,信息聚合,游戏排行和组织管理等功能.}{底层基础数据和业务数据存储分别采用DCache(MySQL/内存Cache)和Redis;通过长短连接分离隔离了聊天系统和无状态业务系统,前者采用典型的接入/在线/逻辑/push server的架构,后者通过获取论坛/视频/用户feeds/游戏数据做重排或离线计算等实现信息聚合、游戏排行和组织管理.}{相关功能支持单个圈子用户上限达两万人}{}
+\cventry{运营活动系统}{}{在保证服务稳定的基础上,支持多种形式的运营活动的快速上线.}{游戏运营活动本质上是满足条件(资格)的用户参与动作(邀请/分享/抽奖)获得礼包(Q币/道具/实物)并领取的过程. 通过封装不同资格条件/动作/礼包来源,抽象活动的主流程,并严格控制核心资源的加锁粒度,实现不同运营活动的快速配置上线.}{单次活动每日服务百万级用户,单机峰值请求1000次每秒}{}
+\cventry{游戏数据系统}{}{接入腾讯精品手机游戏的用户游戏数据(大区/玩家信息/战绩流水等),整理结构化存储,提供游戏数据基础服务.}{游戏数据源包括游戏DB(MySQL副本)/游戏服务接口(IDIP)/游戏日志数据(TLog/Kafka),后台服务区分不同游戏和数据特性,分类入库到存储集群(MySQL/CKV/Redis);业务服务通过Web管理端配置化管理,提供通用数据接口服务.}{单机不间断入库数据平均2000条每秒(峰值达7000条每秒), 游戏数据接口供所有游戏专区业务访问}{}
 
 %\vspace*{0.01\baselineskip}
 
-\cvcomputer{2010--2011}{基于先进架构的高性能空间分析中间件}{Windows, C++}{国家863项目}{}{}
-\cventry{项目描述}{}{}{该项目旨在研发一套并行的空间数据分析中间件。主要组成部分为：基于Qt的空间数据展示软件，插件式中间件集成框架，空间数据分析算法中间件等}{}{}
-\cventry{个人职责}{}{实现单线程、多线程(OpenMP)、多进程(MPI)版本的空间几何网络构建算法和数据插值算法}{}{}{}
+\cvcomputer{2015.12-2016.03}{腾讯游戏平台(TGP)}{}{}{}{}
+\cventry{TGP端游社区}{}{为主要端游如英雄联盟定制讨论区,以聚合游戏攻略/战绩/视频等精品内容并促进用户内容的分享.}{社区前后台使用Ajax方式交互数据,采用javascript/jQuery/jTemplates操作前端交互,后台搭建Python轻量级Web服务框架,使用Nginx反向代理接入,采用Varnish/Memcached做缓存以优化响应性能}{}{}
 
 %\renewcommand{\baselinestretch}{1.0}
 
-
-\section{开源社区}
-\cventry{Blog}         {\url{wchar.org} }{技术博客,}{记录研究心得和编程经验,}{超过200篇}{}
-\cventry{StackOverflow}{\url{stackoverflow.com/users/1607051/lulyon} }{Q\&A > 150, Reputation > 2k, }{top 2\%}{}{}
-\cventry{OnlineJudge}  {\url{acm.whu.edu.cn/land/user/detail?user_id=2499} }{Rank: 17,}{top 0.2\%}{}{}
-\cventry{GitHub}       {\url{github.com/lulyon}}{个人开源项目和实验文档,}{编程语言：C/C++, Java, Bash, R}{}{}
-\cventry{1)}{}{R-snappy}{~C\&R,}{Google开源压缩库Snappy的R语言接口绑定}{}
-\cventry{2)}{}{VegaDB}{~C++,}{MySQL空间数据存储引擎,支持要素查询和表尾插入}{}
-\cventry{3)}{}{SpatialClient}{~C++,}{内存数据库Redis的空间数据访问客户端}{}
-\cventry{4)}{}{RealTimeIndexer}{~Java,}{基于Lucene的微博数据索引和搜索工具}{}
-
 \section{专业技能}
-\cventry{编程语言}{C/C++ > Java > Bash shell}{}{}{}{}
-\cventry{操作系统}{Linux, Windows}{~~~~熟悉Linux和Windows环境编程}{}{}{}
-\cventry{数据库}{MySQL, PostgreSQL, Redis}{~~~~熟悉MySQL, PostgreSQL, Redis}{}{}{}
-\cventry{并行计算}{MPI}{~~~~熟悉基于MPI的并行程序设计及调优}{}{}{}
-\cventry{外语水平}{}{CET-6: 510分;~~60-second science~的翻译者,}{~~翻译科技短文超过100篇}{}{}
+\cventry{编程语言}{}{熟悉C/C++语言,有Python/Java/Javascript/R语言项目开发经验}{}{}{}
+\cventry{服务器}{}{熟悉多线程RPC/多进程异步/协程等常用服务器开发框架}{}{}{}
+\cventry{操作系统}{}{熟悉Linux系统编程,熟悉Shell脚本语言}{}{}{}
+\cventry{数据库}{}{熟悉MySQL和Redis等常用数据库,以及后台存储层高可用架构设计方法}{}{}{}
+\cventry{Web开发}{}{熟悉Web开发,熟悉HTML/Javascript/Ajax,以及Nginx/Varnish等常用eb服务器}{}{}{}
 
 
+\section{开源项目}
+\cventry{R-snappy}{}{}{~C\&R,}{Google开源压缩库Snappy的R语言接口绑定,官方收录}{}
+\cventry{bottle.app}{}{}{~Python,}{基于Bottle.py封装的Web应用框架}{}
+\cventry{Gravity}{}{}{~C++,}{基于Cocos2D开发的手机小游戏}{}
+\cventry{VegaDB}{}{}{~C++,}{MySQL空间数据存储引擎,支持要素查询和表尾插入}{}
+\cventry{RTIndexer}{}{}{~Java,}{基于Lucene的微博数据索引和搜索工具}{}
 
-\section{活动与奖励}
-\cventry{社团活动}{}{武汉大学ACM集训队;~~微软技术俱乐部成员}{}{}{}
-\cventry{竞赛奖励}{}{陈永龄院士科技创新奖学金;~~武汉大学ACM暨华中北区程序设计大赛三等奖}{}{}{}
-\cventry{学习奖励}{}{新生乙等奖学金;~~国家励志奖学金;~~国家乙等奖学金}{}{}{}
-\cventry{荣誉称号}{}{优秀共青团员;~~院优秀毕业生}{}{}{}
+\section{个人链接}
+\cventry{StackOverflow}{\url{http://stackoverflow.com/users/1607051/lulyon}}{}{}{}{}
+\cventry{GitHub}       {\url{https://github.com/lulyon}}{}{}{}{}
+
+
 \closesection{}                   % needed to renewcommands
 
 \end{document}
